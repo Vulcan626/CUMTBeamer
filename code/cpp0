@@ -1,0 +1,16 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main() {
+    string festival;
+    cout << "请输入要庆祝的节日（国庆节或中秋节）：";
+    cin >> festival;
+    if (festival == "国庆节") {
+        cout << "祝您国庆快乐，欢度国庆节！" << endl;
+    } else if (festival == "中秋节") {
+        cout << "祝您中秋快乐，共度中秋节！" << endl;
+    } else {
+        cout << "祝您节日快乐！" << endl;
+    }
+    return 0;
+}

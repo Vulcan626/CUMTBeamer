@@ -1,0 +1,242 @@
+%%
+	%Created by Zhanbo Hua
+	%CUMT Beamer
+%%
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cite} % For citations
+\usepackage{hyperref} % For clickable links in the references
+\usepackage[absolute,overlay]{textpos}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage[UTF8]{ctex}
+\usepackage{tabularx}
+
+%代码设置
+\usepackage{fancybox}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\newcommand{\Console}{Console}
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize\rmfamily,     % size of fonts used for the code
+	columns=fullflexible,
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	tabsize=4,
+	commentstyle=\color{mygreen},    % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{mymauve}\ttfamily,     % string literal style
+	numbers=left, 
+	%frame=single,
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	%identifierstyle=\color{red},
+	language=c
+}
+
+\mode<presentation>
+{
+\usetheme{Madrid}
+\usecolortheme{beaver}
+}
+ 
+%Change the reference icon to a standard format
+\setbeamertemplate{bibliography item}[text]
+
+%------TITLE PAGE------
+\title[CUMT]{编码颂国庆 \ 情思寄中秋}
+\author[Authors]{华展博}
+\institute[CUMT]{计算机科学与技术学院 \\ 中国矿业大学 \\ 08212759@cumt.edu.cn}
+\date{2023年10月1日}
+
+\iffalse
+%------Highlight the title of the current section------
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{目录}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+\fi
+
+\begin{document}
+
+% Logo at the top center
+\begin{textblock*}{5cm}(5.7cm,0.1cm) % Adjust the position as needed
+\includegraphics[width=1.5cm]{fig/logo0.png}
+\end{textblock*}
+
+%insert title page
+\frame{\titlepage}
+
+\iffalse
+\makeatletter
+\setbeamertemplate{footline}{
+  \ifnum\c@framenumber>1%
+    \tikz[remember picture,overlay]{
+      \node at (current page.north east) [anchor=north east, yshift=-0.2cm] {\includegraphics[width=5cm]{resources/logo1.png}};
+    }
+  \fi
+}
+\fi
+
+\makeatother
+
+%insert contents
+\begin{frame}
+	\frametitle{目录}
+	\tableofcontents
+\end{frame}
+
+%导言
+\section{导言}
+	%Frame0
+	\begin{frame}{导言}
+		\begin{columns}
+    		\begin{column}{0.5\textwidth} % Adjust the width as needed
+      		\textbf{解字:}
+      		\begin{itemize}
+        		\item “或，邦也。从囗从戈，以守一。一，地也。
+        		\item “囗”的加入，强化了国境线的概念。
+      		\end{itemize}
+    		\end{column}
+    		\begin{column}{0.5\textwidth} % Adjust the width as needed
+      		\begin{figure}
+        		\includegraphics[width=0.7\linewidth]{fig/guofan.png} % Adjust the path and size of the image
+        		\caption{國}
+      		\end{figure}
+    		\end{column}
+  		\end{columns}
+	\end{frame}
+	%Frame1
+	\begin{frame}{导言}
+		\begin{columns}
+    		\begin{column}{0.5\textwidth} % Adjust the width as needed
+      		\textbf{解字:}
+      		\begin{itemize}
+        		\item 国家实行王道之治。
+      		\end{itemize}
+    		\end{column}
+    		\begin{column}{0.5\textwidth} % Adjust the width as needed
+      		\begin{figure}
+        		\includegraphics[width=0.7\linewidth]{fig/guojian.png} % Adjust the path and size of the image
+        		\caption{国}
+      		\end{figure}
+    		\end{column}
+  		\end{columns}
+	\end{frame}
+	%Frame2
+	\begin{frame}{导言}
+		\begin{itemize}
+			\item “国”的字形演变，其实也反映了国家概念的多重内涵和不断完善。
+			\item 就中国而言，从远古的小国寡民到当今的泱泱大国，尤其是从积贫积弱、四分五裂的半殖民地、半封建国家到建立新中国迈入新征程，其间经历了多少可歌可泣的历史风云和艰辛奋斗！
+		\end{itemize}
+	\end{frame}
+	
+%国庆节
+\section{国庆节}
+	%Frame1
+	\begin{frame}{国庆节}
+	\framesubtitle{示例代码}
+			\lstinputlisting[lastline=20,
+							language=c,
+							frame=single,
+							caption=Simple Code,
+							label=python]
+							{code/cpp0}
+	\end{frame}
+	%FrameTable1
+	\begin{frame}{国庆节}
+	\framesubtitle{示例表格}
+		\begin{table}[h]
+		\centering
+		\caption{实验结果（radio=1）}
+			\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			实验编号 & 精度 & 召回率 & 覆盖率 & 流行度 \\
+			\hline
+			0 & 19.15\% & 9.2\% & 88.35\% & 6.3121 \\
+			1 & 19.01\% & 9.1\% & 87.85\% & 6.3099 \\
+			2 & 19.06\% & 9.11\% & 87.71\% & 6.3076 \\
+			3 & 18.92\% & 9.09\% & 88.81\% & 6.3017 \\
+			4 & 18.9\% & 9.09\% & 88.3\% & 6.3162 \\
+			5 & 18.96\% & 9.15\% & 88.24\% & 6.3114 \\
+			6 & 18.7\% & 8.99\% & 88.78\% & 6.3055 \\
+			7 & 18.69\% & 8.96\% & 88.3\% & 6.2934 \\
+			\hline
+			\multicolumn{5}{c}{平均结果 (M=8, N=10, 比例=1)} \\
+			\hline
+ 			ratio=1 & 18.92\% & 9.09\% & 88.29\% & 6.3072 \\
+			\hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+%中秋节
+\section{中秋节}
+	%Frame1
+	\begin{frame}
+	\frametitle{中秋节}
+	\framesubtitle{示例公式}
+		\textbf{目标函数}\\
+		偏置部分主要由三个子部分组成，分别是：
+		\begin{minipage}[c][0.35\textheight][c]{\linewidth}
+			\centering
+			\begin{itemize}
+  				\item 训练集中所有评分记录的全局平均数$\mu$，表示了训练数据的总体评分情况，对于固定的数据集，它是一个常数。
+  				\item 用户偏置$b_i$:独立于物品特征的因素，表示某一特定用户打分习惯。
+  				\item 物品偏置$b_j$:特立于用户兴趣的因素，表示某一特定物品得到的打分情况。	
+  			\end{itemize}
+		\end{minipage}
+		\begin{minipage}[c][0.15\textheight][c]{\linewidth}
+			\centering
+			\textbf{则偏置部分表示为:}\\
+			$b_{ij}=\mu+b_i+b_j$\\
+			\textbf{加入偏置项的优化函数J(p,q)为:}\\
+			$\mathop{\arg\min}\limits_{p_j q_j}\sum_{i,j\in K}(m_{ij}-\mu-b_i-b_j-q_j^Tp_i)^2+\lambda(\Vert p_i \Vert_2^2+\Vert q_j \Vert_2^2+\Vert b_i \Vert_2^2+\Vert b_j \Vert_2^2)$\\
+			同理，这个优化目标也可以用梯度下降法求解，方法相同
+		\end{minipage}
+	\end{frame}
+	%Frame2
+	\begin{frame}
+	\frametitle{中秋节}
+		\begin{minipage}[c][0.4\textheight][c]{\linewidth}
+			\centering
+			\begin{itemize}
+  				\item 示例文字1
+  				\item 示例文字2
+  				\item 示例文字3
+			\end{itemize}
+		\end{minipage}
+		\begin{minipage}[c][0.4\textheight][c]{\linewidth}
+			\centering
+			\includegraphics[width=0.5\linewidth]{fig/zq}
+		\end{minipage}
+	\end{frame}
+	
+%寄语
+\section{寄语}
+	\begin{frame}{寄语}
+		\textbf{ \hspace*{18pt}编码颂国庆，情思寄中秋}
+    \end{frame}
+    
+%参考文献
+\section{参考文献}
+	\begin{frame}{参考文献}
+		\begin{thebibliography}{9}
+			\bibitem{XX2012}
+			XX编著；XX，XX审校 (2012)。《XXXXXX》。XX：XXXX出版社。
+			\bibitem{XX2018}
+			XX，XXX，XXX，XXX (2018)。XXXXXXXXXXXX。《XX大学学报(自然科学版)》，第1期，55-60。
+		\end{thebibliography}
+	\end{frame}
+	
+\end{document}
