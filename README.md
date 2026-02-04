@@ -18,7 +18,7 @@
 模版效果请打开pdf文件查看
 ## 模版作者:
 作者:Zhanbo Hua
-邮箱:08212759@cumt.edu.cn
+邮箱:huazhanbo@gmail.com
 ## 模版更新:
 2023.10.8
 ## 模版使用许可:
